@@ -1,99 +1,59 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
-
-// The API object contains methods for each kind of request we'll make
-var API = {
-  saveExample: function(example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
-  },
-  getExamples: function() {
-    return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
-  }
-};
-
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
-};
+var $destination = $("#destination");
+var $date_start = $("#date-start");
+var $date_end = $("#date-end");
+var $airline = $("#airline");
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
-  event.preventDefault();
+var handleFormSubmit = function (event) {
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+
+  var data = {
+    destination: $destination.val().trim(),
+    date_start: $date_start.val().trim(),
+    date_end: $date_end.val().trim(),
+    airline: $airline.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  // input validation
+  if (!data.destination) {
+    //alert("You must enter an destination!");
+    return
+  }
+
+  if (!data.date_start || !data.date_end) {
+    // alert("You must enter the date of travel!");
     return;
   }
 
-  API.saveExample(example).then(function() {
-    refreshExamples();
+  if (data.date_start >= data.date_end) {
+    // alert("End date must after start date!");
+    return
+  }
+
+  event.preventDefault();
+
+  // console.log(data);
+  $.post("/result", data, function (res) {
+    //console.log(res);
+    var newDoc = document.open("text/html", "replace");
+    newDoc.write(res);
+    newDoc.close();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  // $destination.val("");
+  // $date_start.val("");
+  // $date_end.val("");
+  // $airline.val("");
 };
 
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$(document).on("click", "#submit", handleFormSubmit);
+
+// dynamically change the minimum end date
+$(document).on("change", "#date-start", function () {
+  var min = $("#date-start").val().trim();
+  $("#date-end").attr("min", min);
+});
