@@ -30,13 +30,14 @@
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
           {{!-- TODO: put the flight info here --}}
           {{!-- TODO: put the hotel api here --}}
+          {{!-- IAN CODE UPDATE BEGINNING --}}
           <div class="hotel-search">
             <div id="findhotels">
               Find hotels in:
             </div>
 
             <div id="locationField">
-              <input id="autocomplete" placeholder="Enter a city" type="text" />
+              <input id="destination" placeholder="Enter a city" type="text" />
             </div>
 
             <div id="controls">
@@ -95,10 +96,10 @@
           </div>
           <!-- Replace the value of the key parameter with your own API key. -->
           <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdGhuLhVyO8bv53Zq7SR8jhZKPmcw9RfI&libraries=places&callback=initMap"
+            src="https://maps.googleapis.com/maps/api/js?key=INSERT_API_KEY&libraries=places&callback=initMap"
             async defer></script>
         </div>
-
+        {{!-- IAN CODE UPDATE END --}}
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
           <br>
           <table class="table">

@@ -6,6 +6,7 @@
   vertical-align:middle;
 }
 
+/* IAN CODE UPDATE BEGINNING */
 
 /* Styling for google maps */
  #map {
@@ -104,3 +105,5 @@ table {
 .iw_table_icon {
   text-align: right;
 }
+
+/* IAN CODE UPDATE END */
