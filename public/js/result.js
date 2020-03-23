@@ -1,6 +1,7 @@
 $(document).ready(function () {
     // activities logic
     updateTotalCost();
+    
 
     // remove button listener
     $(document).on("click", ".btn-remove", function () {
@@ -41,12 +42,28 @@ $(document).ready(function () {
     }
 })
 
-// IAN CODE UPDATE BEGINNING
+// Obtain Data from MySQL for Flight/Hotel Tab
+readFlights();
+readLocation();
 
-// This example uses the autocomplete feature of the Google Places API.
-// It allows the user to find all hotels in a given place, within a given
-// country. It then displays markers for all the hotels returned,
-// with on-click details for each hotel.
+// need updated fields from DB
+function readFlights() {
+  connection.query("SELECT flight * FROM travel", function(err, res) {
+    if (err) throw err;
+    console.log(res);
+    $("#flightinfo").append();
+  });
+}
+
+function readLocation() {
+  connection.query("SELECT city * FROM travel", function(err, res) {
+    if (err) throw err;
+    console.log(res);
+    $("#destination").append();
+  });
+}
+
+// GOOGLE PLACES API & AUTOFILL CODE BEGINNING
 
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
@@ -318,5 +335,4 @@ function buildIWContent(place) {
     document.getElementById('iw-website-row').style.display = 'none';
   }
 }
-
-// IAN CODE UPDATE END
+// GOOGLE PLACES API & AUTOFILL CODE END

@@ -39,14 +39,13 @@ table {
   z-index: 1;
 }
 #map {
-  margin: 40px;
+  margin-top: 40px;
   width: 440px;
   height: 400px;
   float: left;
-
+  
 }
 #listing {
-  /* position: absolute; */
   margin-top: 40px;
   width: 200px;
   height: 400px;
