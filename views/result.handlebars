@@ -1,20 +1,22 @@
-<div id="result">
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="/">Globetrotter</a>
-    <a href="/" class="btn btn-primary">start over</a>
-  </nav>
-</div>
+<div class="resultWrapper">
 
-<div class="container">
-  <div class="row">
-    {{!-- TODO: Place the weather will be: --}}
+  <div id="result">
+    <nav class="navigation sticky">
+      <a class="navbar-brand" href="/">GlobeTrotter</a>
+      <a href="/" class="btn btn-primary btn-lg" id="newTrip">New Trip</a>
+
+    </nav>
   </div>
 
+  <div class="resultcontainer">
+    <div class="row">
+      {{!-- TODO: Place the weather will be: --}}
+    </div>
 
-  <div class="row">
-    <div class="container">
+
+    <div class="tabContainer">
       <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
           <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
             aria-controls="nav-home" aria-selected="true">Packing List</a>
           <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
@@ -56,13 +58,11 @@
             <td id="totalCost"></td>
             <td></td>
           </table>
-
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 
 <script src="/js/result.js"></script>

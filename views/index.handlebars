@@ -1,55 +1,56 @@
-<div id="home">
+<div class="homeWrapper">
 
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="/">Globetrotter</a>
-  </nav>
+  <div id="home">
 
-  <div class="jumbotron jumbotron-fluid text-center">
-    <h1 class="display-5">Welcome to Globetrotter!</h1>
-    <p class="lead">This is a simple app to help you manage your trip.</p>
-    <hr class="my-3">
-    <p>Let's get started by filling the following form with your trip information.</p>
-  </div>
+    <nav class="navigation sticky">
+      <a class="navbar-brand" href="/">GlobeTrotter</a>
+    </nav>
 
-
-  <!--Form-->
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <form class="clearfix mb-4" method="post">
-          <div class="form-group">
-            <label for="destination" class="col-form-label">Destination</label>
-            <input type="text" id="destination" class="form-control" placeholder="Please enter your Destination here"
-              required />
-          </div>
+    <div class="jumbotron jumbotron-fluid text-center" id="intro">
+      <h1 class="display-5">Welcome to Globetrotter!</h1>
+      <h4> This is a simple app to help you manage your trip.</h4>
+      <h4> Let's get started by filling the following form with your trip information.</h4>
+    </div>
 
 
-          <div class="form-group">
-            <label class="col-form-label">Travel Date</label>
-            <div class="form-group row">
-              <label for="date-start" class="col-1 col-form-label">From</label>
-              <div class="col-5">
-                <input class="form-control" type="date" id="date-start" required />
-              </div>
-              <label for="date-end" class="col-1 col-form-label">To</label>
-              <div class="col-5">
-                <input class="form-control" type="date" id="date-end" required />
+    <!--Form-->
+    <div class="formContainer">
+      <div class="row">
+        <div class="col-8 offset-2">
+          <form class="clearfix mb-4" method="post">
+            <div class="form-group">
+              <label for="destination" class="col-form-label">Destination</label>
+              <input type="text" id="destination" class="form-control" placeholder="Please enter your Destination here"
+                required />
+            </div>
+
+
+            <div class="form-group">
+              <label class="col-form-label">Travel Date</label>
+              <div class="form-group row">
+                <label for="date-start" class="col-1 col-form-label">From</label>
+                <div class="col-5">
+                  <input class="form-control" type="date" id="date-start" required />
+                </div>
+                <label for="date-end" class="col-1 col-form-label">To</label>
+                <div class="col-5">
+                  <input class="form-control" type="date" id="date-end" required />
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label for="airline" class="col-form-label">Airline (Optional)</label>
-            <input type="text" id="airline" class="form-control" placeholder="Please enter your airline here">
-          </div>
+            <div class="form-group">
+              <label for="airline" class="col-form-label">Airline (Optional)</label>
+              <input type="text" id="airline" class="form-control" placeholder="Please enter your airline here">
+            </div>
 
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
+            <button id="submit" class="btn btn-primary btn-lg">Submit</button>
+          </form>
+        </div>
       </div>
     </div>
+    <!--Form end-->
   </div>
-  <!--Form end-->
 </div>
-
 {{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
 <script src="/js/index.js"></script>
