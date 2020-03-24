@@ -153,27 +153,64 @@ $(document).ready(function() {
       $newItemInput.val("");
     }
 
-
-    //weather stuff
-    console.log(currentWeather);
-
+    // Generate packing list intems
     function initialPackinglist() {
-        // Packinglist.sync().then(() => {
-        //   //Spring-Summer season
-        //   Packinglist.create({ item: "Swim Shorts", quantity: 1, season: "Summer" });
-        //   Packinglist.create({ item: "Sunscreen", quantity: 1, season: "Summer" });
-        //   //Fall-Winter season
-        //   Packinglist.create({ item: "Down Jacket", quantity: 1, season: "Winter" });
-        //   Packinglist.create({ item: "Scarf", quantity: 1, season: "Winter" });
-        // });
-        
-        if (currentWeather >= 78) {
-            console.log('hot weather')
-        } else {
-            console.log('cold weather')
+        var itemsGeneral = [
+            {"text":"Socks","quantity":4},
+            {"text":"Underwear","quantity":4},
+            {"text":"Tee Shirt","quantity":4},
+            {"text":"Shirt","quantity":3},
+            {"text":"Pants","quantity":1},
+            {"text":"Hat","quantity":1},
+            {"text":"Shoes","quantity":1}
+        ]
+        for (let i = 0; i < itemsGeneral.length; i++) {
+            var todo = {
+                text: itemsGeneral[i].text,
+                quantity: itemsGeneral[i].quantity,
+                season: "All",
+                complete: false
+              };
+            $.post("/api/packinglists", todo);
         }
 
-        // $.post("/api/packinglists", todo, getTodos);
+        // Conditional items for weather
+        if (currentWeather >= 78) {
+            var itemsSummer = [
+                {"text":"swim shorts","quantity":2},
+                {"text":"sunglasses","quantity":1},
+                {"text":"sun screen","quantity":1},
+                {"text":"beach ball","quantity":1},
+                {"text":"beach towel","quantity":1}
+            ]
+            for (let i = 0; i < itemsSummer.length; i++) {
+                var todo = {
+                    text: itemsSummer[i].text,
+                    quantity: itemsSummer[i].quantity,
+                    season: "Summer",
+                    complete: false
+                  };
+                $.post("/api/packinglists", todo);
+            }
+        } else {
+            var itemsWinter = [
+                {"text":"swim shorts","quantity":2},
+                {"text":"sunglasses","quantity":1},
+                {"text":"sun screen","quantity":1},
+                {"text":"beach ball","quantity":1},
+                {"text":"beach towel","quantity":1}
+            ]
+            for (let i = 0; i < itemsWinter.length; i++) {
+                var todo = {
+                    text: itemsWinter[i].text,
+                    quantity: itemsWinter[i].quantity,
+                    season: "Winter",
+                    complete: false
+                  };
+                $.post("/api/packinglists", todo);
+            }
+        }
+        getTodos();
     };
 
     initialPackinglist();
