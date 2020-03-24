@@ -1,6 +1,12 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
+const authRouters = require("./routes/authRouters.js");
+
+const passportSetup = require("./config/passport-config.js");
+const cookieSession = require("cookie-session");
+const myKeys = require("./config/keys.js");
+const passport = require("passport");
 
 var db = require("./models");
 
@@ -12,6 +18,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
+app.use(cookieSession({
+  maxAge: 0.5*60*60*1000, //half hour limit
+  keys:[myKeys.cookieSession.sessioinKey]
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Handlebars
 app.engine(
   "handlebars",
@@ -22,6 +36,7 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
+app.use("/auth",authRouters);
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 

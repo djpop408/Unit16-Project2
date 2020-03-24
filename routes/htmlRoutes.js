@@ -1,11 +1,17 @@
 var db = require("../models");
-
 module.exports = function (app) {
   // Load index page
-  app.get("/", function (req, res) {
-    db.Example.findAll({}).then(function (dbExamples) {
+  app.get("/", (req, res) => {
+    if(req.user == undefined){
+      // no log in
       res.render("index");
-    });
+    }else{
+      // log in user
+      // get user saved trips
+      db.Trips.findAll({where:{UserId:req.user.dataValues.id}}).then(function(result){
+        res.render("index", { user: req.user.dataValues, trips:result });
+      })
+    }
   });
 
   // Load example page and pass in an example by id

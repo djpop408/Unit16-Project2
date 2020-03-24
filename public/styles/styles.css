@@ -5,3 +5,17 @@
 .table td, .table th {
   vertical-align:middle;
 }
+
+.nav-item{
+  margin-left: 20px;
+}
+
+.dropdown-menu{
+  width: 100%;
+  min-height: 100%;
+  overflow: auto;
+}
+
+.dropdown-item:hover{
+  cursor: pointer;
+}
