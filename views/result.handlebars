@@ -1,11 +1,13 @@
+
+<div class="resultWrapper">
 <div id="result">
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navigation sticky">
     <a class="navbar-brand" href="/">Globetrotter</a>
     <a href="/" id="start-over" class="btn btn-primary">start over</a>
   </nav>
 </div>
 
-<div class="container">
+<div class="resultcontainer">
   <div class="row">
     {{!-- TODO: Place the weather will be: --}}
     Trip for {{weatherLocation}} (Dates) - Weather: {{weatherTemp}} &#8457;
@@ -19,9 +21,9 @@
 
 {{d.[0]}} --}}
   <div class="row">
-    <div class="container">
+    <div class="tabContainer">
       <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
           <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
             aria-controls="nav-home" aria-selected="true">Packing List</a>
           <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
@@ -85,7 +87,6 @@
                   </div>
                 </form>
 
-
                 <div class="container">
                   <div class="hotel-search">
                     <div id="findhotels">
@@ -124,6 +125,40 @@
                         <tbody id="results"></tbody>
                       </table>
                     </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              {{!-- IAN CODE UPDATE END --}}
+
+
+              <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <br>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Activities</th>
+                      <th scope="col">Cost</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                    <tr>
+                      <form>
+                        <td scope="row"><input type="text" id="input-activity" placeholder="Put your activity here"
+                            required>
+                        </td>
+                        <td><input type="number" id="input-cost" placeholder="Put estimated cost" required></td>
+                        <td><button class="btn btn-success btn-sm" id="btn-add">Add</button></td>
+                      </form>
+                    </tr>
+                  </thead>
+                  <tbody id="activity-content">
+                  </tbody>
+                  <td scope="row">Total</td>
+                  <td id="totalCost"></td>
+                  <td></td>
+                </table>
 
                     <div style="display: none">
                       <div id="info-content">
