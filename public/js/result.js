@@ -41,6 +41,8 @@ $(document).ready(function () {
         return sum;
     }
 
+    $("#destination").trigger( "change" );
+    search();
 
 })
 
@@ -168,6 +170,7 @@ function initMap() {
 // zoom the map in on the city.
 function onPlaceChanged() {
   var place = autocomplete.getPlace();
+  console.log(place)
   if (place.geometry) {
     map.panTo(place.geometry.location);
     map.setZoom(15);
