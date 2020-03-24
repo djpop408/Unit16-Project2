@@ -2,6 +2,12 @@
   line-height: 2.5;
 }
 
+.list-group-item > button.delete, .list-group-item > button.complete {
+  float: right;
+  height: 25px;
+  margin-left: 5px;
+}
+
 .table td, .table th {
   vertical-align: middle;
 }
@@ -96,3 +102,140 @@
   
 }
 
+/* IAN CODE UPDATE BEGINNING */
+
+/* Styling for google maps */
+ #map {
+  height: 100%;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 0 !important;
+}
+table {
+  font-size: 12px;
+}
+.hotel-search {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  left: 0;
+ /* position: absolute; */
+  top: 0;
+  width: 440px;
+  z-index: 1;
+}
+#map {
+  margin-top: 40px;
+  width: 440px;
+  height: 400px;
+  float: left;
+  
+}
+#listing {
+  margin-top: 40px;
+  width: 200px;
+  height: 400px;
+  overflow: auto;
+  left: 442px;
+  top: 0px;
+  cursor: pointer;
+  overflow-x: hidden;
+  float: left;
+}
+#findhotels {
+  font-size: 14px;
+}
+#locationField {
+  -webkit-box-flex: 1 1 190px;
+  -ms-flex: 1 1 190px;
+  flex: 1 1 190px;
+  margin: 0 8px;
+}
+#controls {
+  -webkit-box-flex: 1 1 140px;
+  -ms-flex: 1 1 140px;
+  flex: 1 1 140px;
+}
+#autocomplete {
+  width: 100%;
+}
+#country {
+  float: left;
+  width: 100%;
+}
+.placeIcon {
+  width: 20px;
+  height: 34px;
+  margin: 4px;
+}
+.hotelIcon {
+  width: 24px;
+  height: 24px;
+}
+#resultsTable {
+  border-collapse: collapse;
+  width: 240px;
+}
+#rating {
+  font-size: 13px;
+  font-family: Arial Unicode MS;
+}
+.iw_table_row {
+  height: 18px;
+}
+.iw_attribute_name {
+  font-weight: bold;
+  text-align: right;
+}
+.iw_table_icon {
+  text-align: right;
+}
+
+.quantity-text {
+  font-size: .8em;
+  color: #888;
+  margin-left: 8px;
+  margin-right: 16px
+}
+
+.season-text {
+  font-size: .8em;
+  color: rgba(255, 255, 255, 0.4);
+  background-color: #878E88;
+  border-radius: 4px;
+  padding: 3px 7px;
+  margin: 0 16px 0 8px;
+}
+
+.season-text.season-color-Winter {
+  color: #1f2d3d6c;
+  background-color: #76BED0;
+}
+
+.season-text.season-color-Summer {
+  color: #1f2d3d6c;
+  background-color: #F7CB15;
+
+.nav-item{
+  margin-left: 20px;
+}
+
+.dropdown-menu{
+  width: 100%;
+  min-height: 100%;
+  overflow: auto;
+}
+
+.dropdown-item:hover{
+  cursor: pointer;
+}
