@@ -39,4 +39,6 @@ $(document).ready(function () {
         $("#totalCost")[0].textContent = sum;
         return sum;
     }
+
+
 })

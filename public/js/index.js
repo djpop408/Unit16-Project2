@@ -144,3 +144,4 @@ $(document).on("change", "#date-start", function () {
   var min = $("#date-start").val().trim();
   $("#date-end").attr("min", min);
 });
+
