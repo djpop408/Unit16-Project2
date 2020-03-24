@@ -40,6 +40,8 @@ $(document).ready(function () {
         $("#totalCost")[0].textContent = sum;
         return sum;
     }
+
+
 })
 
 // Obtain Data from MySQL for Flight/Hotel Tab

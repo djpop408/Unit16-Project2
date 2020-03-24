@@ -2,6 +2,12 @@
   line-height: 2.5;
 }
 
+.list-group-item > button.delete, .list-group-item > button.complete {
+  float: right;
+  height: 25px;
+  margin-left: 5px;
+}
+
 .table td, .table th {
   vertical-align:middle;
 }
@@ -105,4 +111,41 @@ table {
   text-align: right;
 }
 
-/* IAN CODE UPDATE END */
+.quantity-text {
+  font-size: .8em;
+  color: #888;
+  margin-left: 8px;
+  margin-right: 16px
+}
+
+.season-text {
+  font-size: .8em;
+  color: rgba(255, 255, 255, 0.4);
+  background-color: #878E88;
+  border-radius: 4px;
+  padding: 3px 7px;
+  margin: 0 16px 0 8px;
+}
+
+.season-text.season-color-Winter {
+  color: #1f2d3d6c;
+  background-color: #76BED0;
+}
+
+.season-text.season-color-Summer {
+  color: #1f2d3d6c;
+  background-color: #F7CB15;
+
+.nav-item{
+  margin-left: 20px;
+}
+
+.dropdown-menu{
+  width: 100%;
+  min-height: 100%;
+  overflow: auto;
+}
+
+.dropdown-item:hover{
+  cursor: pointer;
+}

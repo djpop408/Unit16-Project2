@@ -1,16 +1,23 @@
 <div id="result">
   <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="/">Globetrotter</a>
-    <a href="/" class="btn btn-primary">start over</a>
+    <a href="/" id="start-over" class="btn btn-primary">start over</a>
   </nav>
 </div>
 
 <div class="container">
   <div class="row">
     {{!-- TODO: Place the weather will be: --}}
+    Trip for {{weatherLocation}} (Dates) - Weather: {{weatherTemp}} &#8457;
   </div>
 
+{{!-- {{a}}
 
+{{b}}
+
+{{c.city}}
+
+{{d.[0]}} --}}
   <div class="row">
     <div class="container">
       <nav>
@@ -25,7 +32,37 @@
       </nav>
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-          {{!-- TODO: put the packing list here --}}
+          {{!-- Packing list starts here --}}
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="list-group todo-list">
+                <li class="list-group-item new-item">
+                  <form id="todo-form">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-8">
+                          <input class="new-item form-control" placeholder="Add an item" type="text" />
+                        </div>
+                        <div class="col-3">
+                          <select class="custom-select" id="season">
+                            <option value="All">All Season</option>
+                            <option value="Winter">Fall / Winter</option>
+                            <option value="Summer">Spring / Summer</option>
+                          </select>
+                        </div>
+                        <div class="col-1">
+                          <button type="submit" class="btn btn-success">Add</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </li>
+                <span class="todo-container col-12 ">
+                </span>
+              </ul>
+            </div>
+          </div>
+          {{!-- End of packing list page --}}
         </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
           {{!-- TODO: put the flight info here --}}
@@ -152,13 +189,16 @@
           </div>
         </div>
       </div>
-
-
-
     </div>
-    <script src="/js/result.js"></script>
-    <!--Google Maps -->
+  </div>
+<!-- Custom Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
+<script>
+  var currentWeather = "{{weatherTemp}}";
+</script>
+<script src="/js/packinglist.js"></script>
+<script src="/js/result.js"></script>
+<!--Google Maps -->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdGhuLhVyO8bv53Zq7SR8jhZKPmcw9RfI&libraries=places&callback=initMap"
       async defer></script>
-  </div>

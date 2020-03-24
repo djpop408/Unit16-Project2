@@ -2,13 +2,46 @@
 
   <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="/">Globetrotter</a>
+
+    {{#if user}}
+    <ul class="nav justify-content-right">
+      <li class="nav-item dropdown">
+        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Manage Your Tiprs
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          {{#each trips}}
+          <span class="dropdown-item trip">{{dataValues.name}}</span>
+          {{/each}}
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="/auth/logout" class="btn btn-danger">Log out</a>
+
+    </ul>
+
+
+    {{else}}
+    <ul class="nav justify-content-right">
+      <li class="nav-item">
+        <a href="/auth/login/google" class="btn btn-primary">Login</a>
+      </li>
+    </ul>
+    {{/if}}
   </nav>
 
   <div class="jumbotron jumbotron-fluid text-center">
+    {{#if user}}
+    <h1 class="display-5">Welcome back, {{user.name}} !</h1>
+    {{else}}
     <h1 class="display-5">Welcome to Globetrotter!</h1>
+    {{/if}}
     <p class="lead">This is a simple app to help you manage your trip.</p>
     <hr class="my-3">
     <p>Let's get started by filling the following form with your trip information.</p>
+
   </div>
 
 
@@ -79,7 +112,13 @@
             <input type="text" id="airline" class="form-control" placeholder="Please enter your airline here">
           </div>
 
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
+          <div id="form-btn-group" class="float-right">
+            {{#if user}}
+            <button id="save" class="btn btn-success">Save</button>
+            {{/if}}
+            <button id="submit" class="btn btn-primary">Submit</button>
+          </div>
+
         </form>
       </div>
     </div>

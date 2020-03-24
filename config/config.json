@@ -2,8 +2,8 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "travel_db",
-    "host": "localhost",
+    "database": "PackingList",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
