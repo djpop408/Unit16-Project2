@@ -12,6 +12,7 @@
   vertical-align:middle;
 }
 
+
 .quantity-text {
   font-size: .8em;
   color: #888;
@@ -36,4 +37,17 @@
 .season-text.season-color-Summer {
   color: #1f2d3d6c;
   background-color: #F7CB15;
+
+.nav-item{
+  margin-left: 20px;
+}
+
+.dropdown-menu{
+  width: 100%;
+  min-height: 100%;
+  overflow: auto;
+}
+
+.dropdown-item:hover{
+  cursor: pointer;
 }
