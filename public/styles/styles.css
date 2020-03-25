@@ -1,11 +1,13 @@
 .list-group-item {
   line-height: 2.5;
+  margin-bottom: 16px;
 }
 
 .list-group-item > button.delete, .list-group-item > button.complete {
   float: right;
-  height: 25px;
-  margin-left: 5px;
+  margin-left: 8px;
+  padding: 1px 13px 3px 12px;
+  text-align: center;
 }
 
 .table td, .table th {
@@ -19,7 +21,6 @@
   background-size: cover;
   height: 100vh;
   width: 100hh;
-  overflow: hidden;
 }
 
 .resultWrapper{
@@ -28,7 +29,6 @@
   background-position: center;
   background-size: cover;
   height: 100vh;
-  overflow: hidden;
 }
  
 /* nav bar */
@@ -83,6 +83,10 @@
   background-color: white;
   width: 70%;
   margin-left: 15%;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.25); 
+  box-shadow: 0px 0px 14px 5px rgba(0,0,0,0.25);
+  margin-bottom: 40px;
 }
 
 #submit{
@@ -90,16 +94,6 @@
   background-color: green;
   font-family: Optima, sans-serif;
   float: right;
-}
-
-/* nav tab */
-
-#nav-tabs {
-  
-}
-
-.table{
-  
 }
 
 /* IAN CODE UPDATE BEGINNING */
@@ -186,6 +180,13 @@ table {
   border-collapse: collapse;
   width: 240px;
 }
+.resultsTitle > .container {
+  text-align: center;
+    background: rgba(255, 255, 255, 0.61);
+    border-radius: 4px;
+    padding: 8px 0;
+    margin-top: 16px;
+}
 #rating {
   font-size: 13px;
   font-family: Arial Unicode MS;
@@ -226,8 +227,12 @@ table {
   color: #1f2d3d6c;
   background-color: #F7CB15;
 
-.nav-item{
+.nav-item {
   margin-left: 20px;
+}
+
+.nav-tabs{
+  padding-top:8px;
 }
 
 .dropdown-menu{
