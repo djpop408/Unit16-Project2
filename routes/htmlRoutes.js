@@ -33,7 +33,7 @@ module.exports = function (app) {
       var weatherLocation = result[0].location.name;
       var weatherTemp = result[0].forecast[0].high;
       //res.render("result", {a:"hello from backend",b:"another string from backend!!!!",c:{city:"denver"},d:[1,2,3]});
-      res.render("result", {weatherLocation:weatherLocation, weatherTemp:weatherTemp});
+      res.render("result", {weatherLocation:weatherLocation, weatherTemp:weatherTemp, destination:destination});
     });
 
   //  res.render("result", req.body);

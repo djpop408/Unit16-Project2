@@ -1,14 +1,15 @@
-<div id="home">
+<div class="homeWrapper">
 
-  <nav class="navbar navbar-light bg-light">
+  <div id="home">
+  <nav class="navbar navbar-light bg-light navigation sticky">
     <a class="navbar-brand" href="/">Globetrotter</a>
 
     {{#if user}}
     <ul class="nav justify-content-right">
       <li class="nav-item dropdown">
-        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        <button class="btn btn-success dropdown-toggle" style="margin-right:8px;" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          Manage Your Tiprs
+          Manage Your Trips
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           {{#each trips}}
@@ -44,9 +45,8 @@
 
   </div>
 
-
   <!--Form-->
-  <div class="container">
+  <div class="formContainer">
     <div class="row">
       <div class="col-8 offset-2">
         <form class="clearfix mb-4" method="post">
@@ -105,27 +105,25 @@
                 <input class="form-control" type="date" id="date-end" required />
               </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label for="airline" class="col-form-label">Airline (Optional)</label>
-            <input type="text" id="airline" class="form-control" placeholder="Please enter your airline here">
-          </div>
+            <div class="form-group">
+              <label for="airline" class="col-form-label">Airline (Optional)</label>
+              <input type="text" id="airline" class="form-control" placeholder="Please enter your airline here">
+            </div>
 
           <div id="form-btn-group" class="float-right">
             {{#if user}}
             <button id="save" class="btn btn-success">Save</button>
             {{/if}}
-            <button id="submit" class="btn btn-primary">Submit</button>
+            <button id="submit" class="btn btn-primary" style="margin-left: 8px;">Submit</button>
           </div>
 
         </form>
       </div>
     </div>
+    <!--Form end-->
   </div>
-  <!--Form end-->
 </div>
-
 {{!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
 <script src="/js/index.js"></script>
     <!--Google Maps -->
