@@ -24,6 +24,9 @@ module.exports = function (app) {
     // Call APIs
     var destination = req.body.destination;
     var airline = req.body.airline;
+    if(airline==""){
+      airline = "None";
+    }
 
     // NPM weather-js 
     weather.find({search: destination, degreeType: 'F'}, function(err, result) {
