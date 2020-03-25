@@ -121,7 +121,7 @@ var getTripInfo = function (event) {
       $("#date-end").val(new Date(result.date_end).toISOString().substr(0, 10));
       $("#airline").val(result.airline);
       // add a "remove" button
-      console.log("add btn");
+      // console.log("add btn");
       $("#delete").remove();
       name = encodeURI(name);
       $("#form-btn-group").prepend(`<button id="delete" class="btn btn-primary" data-trip = ${name}>Delete</button>`);

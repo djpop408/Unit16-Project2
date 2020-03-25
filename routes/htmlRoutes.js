@@ -19,10 +19,14 @@ module.exports = function (app) {
 
   // Load example page and pass in an example by id
   app.use("/result", function (req, res) {
-    // console.log(req.body);
+    console.log(req.body);
 
     // Call APIs
     var destination = req.body.destination;
+    var airline = req.body.airline;
+    if(airline==""){
+      airline = "None";
+    }
 
     // NPM weather-js 
     weather.find({search: destination, degreeType: 'F'}, function(err, result) {
@@ -33,7 +37,7 @@ module.exports = function (app) {
       var weatherLocation = result[0].location.name;
       var weatherTemp = result[0].forecast[0].high;
       //res.render("result", {a:"hello from backend",b:"another string from backend!!!!",c:{city:"denver"},d:[1,2,3]});
-      res.render("result", {weatherLocation:weatherLocation, weatherTemp:weatherTemp});
+      res.render("result", {weatherLocation:weatherLocation, weatherTemp:weatherTemp, destination:destination, airline:airline});
     });
 
   //  res.render("result", req.body);

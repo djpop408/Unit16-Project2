@@ -24,7 +24,9 @@ module.exports = function (app) {
   app.post("/api/packinglists", function(req, res) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
+
     // and complete property
+    
     db.Packinglist.create({
       text: req.body.text,
       quantity: req.body.quantity,
@@ -35,6 +37,7 @@ module.exports = function (app) {
       console.log('this is working here apiRoutes');
       res.json(dbPackinglist);
     });
+    
   });
 
   // DELETE route for deleting todos. We can get the id of the todo to be deleted from

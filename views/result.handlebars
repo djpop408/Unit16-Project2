@@ -1,7 +1,7 @@
 <div class="resultWrapper">
   <div id="result">
     <nav class="navbar navigation sticky">
-      <a class="navbar-brand" href="/">Globetrotter</a>
+      <a class="navbar-brand" href="/">GlobeTrotter</a>
       <a href="/" id="start-over" class="btn btn-primary">Start Over</a>
     </nav>
   </div>
@@ -137,7 +137,7 @@
                             </table>
                           </div>
                         </div>
-
+                        {{!-- map info window --}}
                         <div style="display: none">
                           <div id="info-content">
                             <table>
@@ -169,10 +169,10 @@
                 </div>
               </div>
             </div>
-          </div>
-          {{!-- IAN CODE UPDATE END --}}
-
-
+         </div> {{!-- /map info window --}}
+         
+         {{!-- IAN CODE UPDATE END --}}
+          
           <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
             <br>
             <table class="table">
@@ -198,19 +198,21 @@
               <td id="totalCost"></td>
               <td></td>
             </table>
+          </div>{{!-- /tab-pane --}}
+        </div> {{!-- /tab-content --}}
+      </div>{{!-- /tab-container --}}
+    </div>{{!-- /row --}}
+  </div>{{!-- /resultscontainer --}}
+</div>{{!-- /resultsWraper--}}
 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 
 <!-- Custom Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
 <script>
   var currentWeather = "{{weatherTemp}}";
+  var destination = "{{destination}}";
+  var airline = "{{destination}}";
+
 </script>
 <script src="/js/packinglist.js"></script>
 <script src="/js/result.js"></script>
