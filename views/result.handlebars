@@ -2,7 +2,6 @@
   <div id="result">
     <nav class="navbar navbar-light bg-light navigation sticky">
       <a class="navbar-brand" href="/">Globetrotter</a>
-
       <ul class="nav justify-content-right">
         <li class="nav-item">
           <a href="/" id="start-over" class="btn btn-primary">Start Over</a>
@@ -17,7 +16,7 @@
         Trip for {{weatherLocation}} (Dates) - Weather: {{weatherTemp}} &#8457;
       </div>
     </div>
-
+    
     <div class="row">
       <div class="tabContainer">
         <nav>
@@ -32,7 +31,6 @@
         </nav>
 
         <div class="tab-content" id="nav-tabContent">
-
           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
             {{!-- Packing list starts here --}}
             <div class="row">
@@ -55,6 +53,7 @@
                           <div class="col-1">
                             <button type="submit" class="btn btn-success">Add</button>
                           </div>
+
                         </div>
                       </div>
                     </form>
@@ -174,7 +173,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
 <script>
   var currentWeather = "{{weatherTemp}}";
-  var destination = "{{destination}}"
+  var destination = "{{destination}}";
+  var airline = "{{destination}}";
+
 </script>
 <script src="/js/packinglist.js"></script>
 <script src="/js/result.js"></script>

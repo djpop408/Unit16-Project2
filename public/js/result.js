@@ -41,31 +41,11 @@ $(document).ready(function () {
         return sum;
     }
 
-    $("#destination").trigger( "change" );
-    search();
+    // $("#destination").trigger( "change" );
+    // search();
 
 })
 
-// Obtain Data from MySQL for Flight/Hotel Tab
-readFlights();
-readLocation();
-
-// need updated fields from DB
-function readFlights() {
-  connection.query("SELECT flight * FROM travel", function(err, res) {
-    if (err) throw err;
-    console.log(res);
-    $("#flightinfo").append();
-  });
-}
-
-function readLocation() {
-  connection.query("SELECT city * FROM travel", function(err, res) {
-    if (err) throw err;
-    console.log(res);
-    $("#destination").append();
-  });
-}
 
 // GOOGLE PLACES API & AUTOFILL CODE BEGINNING
 
@@ -136,6 +116,8 @@ var countries = {
 };
 
 function initMap() {
+
+
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: countries['us'].zoom,
     center: countries['us'].center,
@@ -164,8 +146,24 @@ function initMap() {
   // Add a DOM event listener to react when the user selects a country.
   document.getElementById('country').addEventListener(
       'change', setAutocompleteCountry);
+
+      var request = {
+        query: destination,
+        fields: ['name', 'geometry'],
+      };
+      places.findPlaceFromQuery(request, function (results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          map.panTo(results[0].geometry.location);
+          map.setZoom(15);
+          setTimeout(search, 1000);
+        }
+        
+      });     
 }
 
+$(document).on("click", "#search", function (event) {
+  search();
+});
 // When the user selects a city, get the place details for the city and
 // zoom the map in on the city.
 function onPlaceChanged() {
