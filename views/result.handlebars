@@ -1,230 +1,175 @@
-
 <div class="resultWrapper">
-<div id="result">
-  <nav class="navigation sticky">
-    <a class="navbar-brand" href="/">Globetrotter</a>
-    <a href="/" id="start-over" class="btn btn-primary">start over</a>
-  </nav>
-</div>
+  <div id="result">
+    <nav class="navbar navbar-light bg-light navigation sticky">
+      <a class="navbar-brand" href="/">Globetrotter</a>
 
-<div class="resultcontainer">
-  <div class="row">
-    {{!-- TODO: Place the weather will be: --}}
-    Trip for {{weatherLocation}} (Dates) - Weather: {{weatherTemp}} &#8457;
+      <ul class="nav justify-content-right">
+        <li class="nav-item">
+          <a href="/" id="start-over" class="btn btn-primary">Start Over</a>
+        </li>
+      </ul>
+    </nav>
   </div>
 
-  {{!-- {{a}}
+  <div class="resultcontainer">
+    <div class="resultsTitle row">
+      <div class="container">
+        Trip for {{weatherLocation}} (Dates) - Weather: {{weatherTemp}} &#8457;
+      </div>
+    </div>
 
-{{b}}
+    <div class="row">
+      <div class="tabContainer">
+        <nav>
+          <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+              aria-controls="nav-home" aria-selected="true">Packing List</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+              aria-controls="nav-profile" aria-selected="false">Flight / Hotel</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+              aria-controls="nav-contact" aria-selected="false">Activities</a>
+          </div>
+        </nav>
 
-{{c.city}}
+        <div class="tab-content" id="nav-tabContent">
 
-{{d.[0]}} --}}
-  <div class="row">
-    <div class="tabContainer">
-      <nav>
-        <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-            aria-controls="nav-home" aria-selected="true">Packing List</a>
-          <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
-            aria-controls="nav-profile" aria-selected="false">Flight / Hotel</a>
-          <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
-            aria-controls="nav-contact" aria-selected="false">Activities</a>
-        </div>
-      </nav>
-      <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-          {{!-- Packing list starts here --}}
-          <div class="row">
-            <div class="col-md-12">
-              <ul class="list-group todo-list">
-                <li class="list-group-item new-item">
-                  <form id="todo-form">
-                    <div class="container">
-                      <div class="row">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            {{!-- Packing list starts here --}}
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="list-group todo-list">
+                  <li class="list-group-item new-item">
+                    <form id="todo-form">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-8">
+                            <input class="new-item form-control" placeholder="Add an item" type="text" />
+                          </div>
+                          <div class="col-3">
+                            <select class="custom-select" id="season">
+                              <option value="All">All Season</option>
+                              <option value="Winter">Fall / Winter</option>
+                              <option value="Summer">Spring / Summer</option>
+                            </select>
+                          </div>
+                          <div class="col-1">
+                            <button type="submit" class="btn btn-success">Add</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </li>
+                  <span class="todo-container col-12 ">
+                  </span>
+                </ul>
+              </div>
+            </div>
+            {{!-- End of packing list page --}}
+          </div>{{!-- /tab-pane --}}
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            {{!-- TODO: put the flight info here --}}
+            {{!-- TODO: put the hotel api here --}}
+
+            {{!-- IAN CODE UPDATE BEGINNING --}}
+            <div class="container">
+              <div class="row">
+                <div class="col-8 offset-2">
+                  <form class="clearfix mb-4" method="post">
+                    <div class="form-group">
+                      <div class="form-group row">
                         <div class="col-8">
-                          <input class="new-item form-control" placeholder="Add an item" type="text" />
-                        </div>
-                        <div class="col-3">
-                          <select class="custom-select" id="season">
-                            <option value="All">All Season</option>
-                            <option value="Winter">Fall / Winter</option>
-                            <option value="Summer">Spring / Summer</option>
-                          </select>
-                        </div>
-                        <div class="col-1">
-                          <button type="submit" class="btn btn-success">Add</button>
+                          <label id="flightinfolabel" class="col-form-label">
+                            <h3>Flight Information</h3>
+                          </label>
+                          <input type="text" id="flightinfo" class="form-control" />
                         </div>
                       </div>
                     </div>
                   </form>
-                </li>
-                <span class="todo-container col-12 ">
-                </span>
-              </ul>
-            </div>
-          </div>
-          {{!-- End of packing list page --}}
-        </div>
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-          {{!-- TODO: put the flight info here --}}
-          {{!-- TODO: put the hotel api here --}}
 
-          {{!-- IAN CODE UPDATE BEGINNING --}}
-          <div class="container">
-            <div class="row">
-              <div class="col-8 offset-2">
-                <form class="clearfix mb-4" method="post">
-                  <div class="form-group">
-                    <div class="form-group row">
-                      <div class="col-8">
-                        <label id="flightinfolabel" class="col-form-label">
-                          <h3>Flight Information</h3>
-                        </label>
-                        <input type="text" id="flightinfo" class="form-control" />
+                  <div class="container">
+                    <div class="hotel-search">
+                      <div id="findhotels">
+                        Find hotels in:
+                      </div>
+
+                      <div id="locationField">
+                        <input id="destination" placeholder="Enter a city" type="text" value="{{destination}}" />
+                      </div>
+
+                      <div id="controls">
+                        <select id="country">
+                          <option value="all">All</option>
+                          <option value="au">Australia</option>
+                          <option value="br">Brazil</option>
+                          <option value="ca">Canada</option>
+                          <option value="fr">France</option>
+                          <option value="de">Germany</option>
+                          <option value="mx">Mexico</option>
+                          <option value="nz">New Zealand</option>
+                          <option value="it">Italy</option>
+                          <option value="za">South Africa</option>
+                          <option value="es">Spain</option>
+                          <option value="pt">Portugal</option>
+                          <option value="us" selected>U.S.A.</option>
+                          <option value="uk">United Kingdom</option>
+                        </select>
                       </div>
                     </div>
-                  </div>
-                </form>
+                    <label id="hotelinfolabel" class="col-form-label">
+                      <h3>Hotel Options</h3>
+                      <div id="map"></div>
 
-                <div class="container">
-                  <div class="hotel-search">
-                    <div id="findhotels">
-                      Find hotels in:
-                    </div>
-
-                    <div id="locationField">
-                      <input id="destination" placeholder="Enter a city" type="text" value="{{destination}}" />
-                    </div>
-
-                    <div id="controls">
-                      <select id="country">
-                        <option value="all">All</option>
-                        <option value="au">Australia</option>
-                        <option value="br">Brazil</option>
-                        <option value="ca">Canada</option>
-                        <option value="fr">France</option>
-                        <option value="de">Germany</option>
-                        <option value="mx">Mexico</option>
-                        <option value="nz">New Zealand</option>
-                        <option value="it">Italy</option>
-                        <option value="za">South Africa</option>
-                        <option value="es">Spain</option>
-                        <option value="pt">Portugal</option>
-                        <option value="us" selected>U.S.A.</option>
-                        <option value="uk">United Kingdom</option>
-                      </select>
-                    </div>
-                  </div>
-                  <label id="hotelinfolabel" class="col-form-label">
-                    <h3>Hotel Options</h3>
-                    <div id="map"></div>
-
-                    <div id="listing">
-                      <table id="resultsTable">
-                        <tbody id="results"></tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              </div>
-              </div>
-              </div>
-              {{!-- IAN CODE UPDATE END --}}
-
-
-              <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                <br>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">Activities</th>
-                      <th scope="col">Cost</th>
-                      <th scope="col">Action</th>
-                    </tr>
-                    <tr>
-                      <form>
-                        <td scope="row"><input type="text" id="input-activity" placeholder="Put your activity here"
-                            required>
-                        </td>
-                        <td><input type="number" id="input-cost" placeholder="Put estimated cost" required></td>
-                        <td><button class="btn btn-success btn-sm" id="btn-add">Add</button></td>
-                      </form>
-                    </tr>
-                  </thead>
-                  <tbody id="activity-content">
-                  </tbody>
-                  <td scope="row">Total</td>
-                  <td id="totalCost"></td>
-                  <td></td>
-                </table>
-
-                    <div style="display: none">
-                      <div id="info-content">
-                        <table>
-                          <tr id="iw-url-row" class="iw_table_row">
-                            <td id="iw-icon" class="iw_table_icon"></td>
-                            <td id="iw-url"></td>
-                          </tr>
-                          <tr id="iw-address-row" class="iw_table_row">
-                            <td class="iw_attribute_name">Address:</td>
-                            <td id="iw-address"></td>
-                          </tr>
-                          <tr id="iw-phone-row" class="iw_table_row">
-                            <td class="iw_attribute_name">Telephone:</td>
-                            <td id="iw-phone"></td>
-                          </tr>
-                          <tr id="iw-rating-row" class="iw_table_row">
-                            <td class="iw_attribute_name">Rating:</td>
-                            <td id="iw-rating"></td>
-                          </tr>
-                          <tr id="iw-website-row" class="iw_table_row">
-                            <td class="iw_attribute_name">Website:</td>
-                            <td id="iw-website"></td>
-                          </tr>
+                      <div id="listing">
+                        <table id="resultsTable">
+                          <tbody id="results"></tbody>
                         </table>
                       </div>
-                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        {{!-- IAN CODE UPDATE END --}}
+            {{!-- IAN CODE UPDATE END --}}
+          </div>{{!-- /tab-pane --}}
+          <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <br>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Activities</th>
+                  <th scope="col">Cost</th>
+                  <th scope="col">Action</th>
+                </tr>
+                <tr>
+                  <form>
+                    <td scope="row"><input type="text" id="input-activity" placeholder="Put your activity here"
+                        required>
+                    </td>
+                    <td><input type="number" id="input-cost" placeholder="Put estimated cost" required></td>
+                    <td><button class="btn btn-success btn-sm" id="btn-add">Add</button></td>
+                  </form>
+                </tr>
+              </thead>
+              <tbody id="activity-content">
+              </tbody>
+              <td scope="row">Total</td>
+              <td id="totalCost"></td>
+              <td></td>
+            </table>
 
-        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-          <br>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Activities</th>
-                <th scope="col">Cost</th>
-                <th scope="col">Action</th>
-              </tr>
-              <tr>
-                <form>
-                  <td scope="row"><input type="text" id="input-activity" placeholder="Put your activity here" required>
-                  </td>
-                  <td><input type="number" id="input-cost" placeholder="Put estimated cost" required></td>
-                  <td><button class="btn btn-success btn-sm" id="btn-add">Add</button></td>
-                </form>
-              </tr>
-            </thead>
-            <tbody id="activity-content">
-            </tbody>
-            <td scope="row">Total</td>
-            <td id="totalCost"></td>
-            <td></td>
-          </table>
+          </div>{{!-- /tab-pane --}}
 
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
+        </div> {{!-- /tab-content --}}
+
+      </div>{{!-- /tab-container --}}
+
+    </div>{{!-- /row --}}
+  </div>{{!-- /resultscontainer --}}
+
+
+</div>{{!-- /resultsWraper--}}
+
+
 <!-- Custom Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
 <script>
