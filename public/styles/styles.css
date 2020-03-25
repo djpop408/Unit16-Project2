@@ -21,6 +21,7 @@
   background-size: cover;
   height: 100vh;
   width: 100hh;
+  overflow: hidden;
 }
 
 .resultWrapper{
@@ -29,6 +30,7 @@
   background-position: center;
   background-size: cover;
   height: 100vh;
+  overflow: hidden;
 }
  
 /* nav bar */
@@ -101,6 +103,7 @@
 /* Styling for google maps */
  #map {
   height: 100%;
+  margin-left: 20%;
 }
 
 html, body {
@@ -132,9 +135,10 @@ table {
   margin-top: 40px;
   width: 440px;
   height: 400px;
-  float: left;
+  
   
 }
+
 #listing {
   margin-top: 40px;
   width: 200px;
@@ -243,4 +247,9 @@ table {
 
 .dropdown-item:hover{
   cursor: pointer;
+}
+
+/* Non-Google Places Code */
+#search {
+  margin: 500PX;
 }
