@@ -6,6 +6,7 @@
   float: right;
   height: 25px;
   margin-left: 5px;
+  line-height: 10px;
 }
 
 .table td, .table th {
@@ -23,19 +24,23 @@
 }
 
 .resultWrapper{
-  background: url("../images/img2.jpg");
+  background: url("../images/img4.jpg");
+  font-family: Optima, sans-serif;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100%;
+}
+
+.tableWrapper{
+font-weight: bold;
 }
  
 /* nav bar */
 
-.navigation{
+#welcomeNavbar{
   height: 70px;
-  background:transparent;
+  background-color: transparent;
 }
 
 .navbar-brand{
@@ -57,7 +62,7 @@
 
 /* jumbotron */
 
-#intro{
+#welcome{
   font-family: Optima, sans-serif;
   background-color: transparent;
   color: white;
@@ -85,29 +90,46 @@
   margin-left: 15%;
 }
 
-#submit{
+#submit, #loginBtn, #logout, #start-over{
   color: white;
   background-color: green;
   font-family: Optima, sans-serif;
   float: right;
 }
 
-/* nav tab */
-
-#nav-tabs {
-  
+#submit, #logout{
+  margin-left: 10px;
 }
-
-.table{
   
+#delete{
+  margin-right: 5px;
 }
+  
+#save, #dropdownMenuButton, #delete{
+  color: white;
+  background-color: green;
+  font-family: Optima, sans-serif;
+}
+#loginBtn{
+  margin-right: 20px;
+}
+  
+#start-over{
+  margin-right: 20px;
+}
+  
+  
+  /* Weather CSS */
+  
+  .weather{
+    text-align: center;
+    color: white;
+    font-family: Optima, sans-serif;
+  }
 
 /* IAN CODE UPDATE BEGINNING */
 
 /* Styling for google maps */
- #map {
-  height: 100%;
-}
 
 html, body {
   height: 100%;
@@ -118,7 +140,8 @@ body {
   padding: 0 !important;
 }
 table {
-  font-size: 12px;
+  font-size: 15px;
+  font-weight: bold;
 }
 .hotel-search {
   -webkit-box-align: center;
@@ -131,20 +154,13 @@ table {
   left: 0;
  /* position: absolute; */
   top: 0;
-  width: 440px;
+  width: 700px;
   z-index: 1;
 }
-#map {
-  margin-top: 40px;
-  width: 440px;
-  height: 400px;
-  float: left;
-  
-}
+
 #listing {
-  margin-top: 40px;
   width: 200px;
-  height: 400px;
+  height: 500px;
   overflow: auto;
   left: 442px;
   top: 0px;
@@ -182,9 +198,13 @@ table {
   width: 24px;
   height: 24px;
 }
+#map {
+  height: 500px;
+}
 #resultsTable {
   border-collapse: collapse;
-  width: 240px;
+  width: 500px;
+
 }
 #rating {
   font-size: 13px;
@@ -239,3 +259,8 @@ table {
 .dropdown-item:hover{
   cursor: pointer;
 }
+
+#flightinfolabel{
+  padding-left: 30px;
+}
+

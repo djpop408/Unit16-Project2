@@ -124,7 +124,7 @@ var getTripInfo = function (event) {
       console.log("add btn");
       $("#delete").remove();
       name = encodeURI(name);
-      $("#form-btn-group").prepend(`<button id="delete" class="btn btn-danger" data-trip = ${name}>Delete</button>`);
+      $("#form-btn-group").prepend(`<button id="delete" class="btn btn-primary" data-trip = ${name}>Delete</button>`);
     } else {
       alert("Something went wrong, please try agian");
     }
