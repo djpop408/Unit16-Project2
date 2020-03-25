@@ -101,7 +101,6 @@
 /* Styling for google maps */
  #map {
   height: 100%;
-  margin-left: 20%;
 }
 
 html, body {
@@ -228,6 +227,7 @@ table {
 .season-text.season-color-Summer {
   color: #1f2d3d6c;
   background-color: #F7CB15;
+}
 
 .nav-item {
   margin-left: 20px;

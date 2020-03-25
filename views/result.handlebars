@@ -11,13 +11,13 @@
   </div>
 
   <div class="resultcontainer">
-    <div class="resultsTitle row">
+    <div class="resultsTitle row" style="margin-left: 0px; margin-right:0px">
       <div class="container">
         Trip for {{weatherLocation}} (Dates) - Weather: {{weatherTemp}} &#8457;
       </div>
     </div>
     
-    <div class="row">
+    <div class="row" style="margin-left: 0px; margin-right:0px">
       <div class="tabContainer">
         <nav>
           <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
@@ -36,7 +36,7 @@
             <div class="row">
               <div class="col-md-12">
                 <ul class="list-group todo-list">
-                  <li class="list-group-item new-item">
+                  <li class="list-group-item new-item" style="margin-top:16px">
                     <form id="todo-form">
                       <div class="container">
                         <div class="row">
@@ -80,7 +80,7 @@
                           <label id="flightinfolabel" class="col-form-label">
                             <h3>Flight Information</h3>
                           </label>
-                          <input type="text" id="flightinfo" class="form-control" />
+                          <p>{{airline}}</p>
                         </div>
                       </div>
                     </div>
@@ -115,21 +115,49 @@
                         </select>
                       </div>
                     </div>
-                    <label id="hotelinfolabel" class="col-form-label">
-                      <h3>Hotel Options</h3>
-                      <div id="map"></div>
 
-                      <div id="listing">
-                        <table id="resultsTable">
-                          <tbody id="results"></tbody>
-                        </table>
+                    <div id="hotelinfolabel" class="container">
+                      <h3>Hotel Options</h3>
+                      <div class="row">
+                        <div id="map"></div>
+                        <div id="listing">
+                          <table id="resultsTable">
+                            <tbody id="results"></tbody>
+                          </table>
+                        </div>
                       </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             {{!-- IAN CODE UPDATE END --}}
           </div>{{!-- /tab-pane --}}
+          
+          {{!-- map info window --}}
+          <div style="display: none">
+            <div id="info-content">
+              <table>
+                <tr id="iw-url-row" class="iw_table_row">
+                  <td id="iw-icon" class="iw_table_icon"></td>
+                  <td id="iw-url"></td>
+                </tr>
+                <tr id="iw-address-row" class="iw_table_row">
+                  <td class="iw_attribute_name">Address:</td>
+                  <td id="iw-address"></td>
+                </tr>
+                <tr id="iw-phone-row" class="iw_table_row">
+                  <td class="iw_attribute_name">Telephone:</td>
+                  <td id="iw-phone"></td>
+                </tr>
+                <tr id="iw-rating-row" class="iw_table_row">
+                  <td class="iw_attribute_name">Rating:</td>
+                  <td id="iw-rating"></td>
+                </tr>
+              </table>
+            </div>
+          </div>{{!-- /map info window --}}
+
           <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
             <br>
             <table class="table">
