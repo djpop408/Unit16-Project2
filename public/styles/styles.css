@@ -21,7 +21,6 @@
   background-size: cover;
   height: 100vh;
   width: 100hh;
-  overflow: hidden;
 }
 
 .resultWrapper{
@@ -30,7 +29,6 @@
   background-position: center;
   background-size: cover;
   height: 100vh;
-  overflow: hidden;
 }
  
 /* nav bar */
