@@ -124,8 +124,8 @@ $(document).ready(function() {
           todo.season,
           "</span>",
           "<input type='text' class='edit' style='display: none;'>",
-          "<button class='delete btn btn-danger'>x</button>",
-          "<button class='complete btn btn-primary'>✓</button>",
+          "<button class='delete btn btn-danger btn-sm'>x</button>",
+          "<button class='complete btn btn-primary btn-sm'>✓</button>",
           "</li>"
         ].join("")
       );
