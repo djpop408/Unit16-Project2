@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "jennie2267",
+    "password": "root",
     "database": "PackingList",
     "host": "127.0.0.1",
     "dialect": "mysql"

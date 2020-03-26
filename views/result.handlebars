@@ -13,15 +13,8 @@
     </h3>
   </div>
 
-  {{!-- {{a}}
-
-{{b}}
-
-{{c.city}}
-
-{{d.[0]}} --}}
   <div class="tableWrapper">
-    <div class="row">
+    <div class="row" style="margin-left: 0; margin-right:0;">
       <div class="tabContainer">
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -74,17 +67,18 @@
             {{!-- IAN CODE UPDATE BEGINNING --}}
             <div class="container">
               <div class="row">
-                <div class="col-8 offset-1.2">
+                <div class="col-12 offset-1.2">
                   <form class="clearfix mb-4" method="post">
                     <div class="form-group">
                       <div class="form-group row">
-                        <div class="col-8">
+                        <div class="col-12">
                           <label id="flightinfolabel" class="col-form-label" style="padding-left: 13px;"
                             style="margin-top: 20px;">
                             <br>
-                            <h3>Flight Information</h3>
+                            <h3>Flight Information: {{airline}}</h3>
                           </label>
-                          <input type="text" id="flightinfo" class="form-control" style="width: 990px;" />
+                          {{!-- <input type="text" id="flightinfo" class="form-control" style="width: 990px;" /> --}}
+                          {{!-- <h5 style="padding-left: 13px; text-align: center"></h5> --}}
                         </div>
                       </div>
                     </div>
@@ -101,7 +95,7 @@
 
                       <div id="locationField">
                         <input id="destination" placeholder="Enter a city" type="text"
-                          style="width: 300px;margin-left: 10px" />
+                          style="width: 300px;margin-left: 10px" value="{{destination}}" />
                       </div>
 
                       <div id="controls" style="margin-left: 10px">

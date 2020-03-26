@@ -178,6 +178,10 @@ function onPlaceChanged() {
   }
 }
 
+$(document).on("click","#nav-profile-tab",(event)=>{
+  setTimeout(search, 300);
+})
+
 // Search for hotels in the selected city, within the viewport of the map.
 function search() {
   var search = {
