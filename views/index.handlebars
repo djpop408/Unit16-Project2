@@ -1,13 +1,13 @@
 <div class="homeWrapper">
 
   <div id="home">
-  <nav class="navbar navbar-light bg-light navigation sticky">
-    <a class="navbar-brand" href="/">Globetrotter</a>
+  <nav class="navbar navigation sticky" id="welcomeNavbar">
+    <a class="navbar-brand" href="/">GlobeTrotter</a>
 
     {{#if user}}
     <ul class="nav justify-content-right">
       <li class="nav-item dropdown">
-        <button class="btn btn-success dropdown-toggle" style="margin-right:8px;" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           Manage Your Trips
         </button>
@@ -19,7 +19,7 @@
       </li>
 
       <li class="nav-item">
-        <a href="/auth/logout" class="btn btn-danger">Log out</a>
+        <a href="/auth/logout" class="btn btn-primary" id="logout">Log out</a>
 
     </ul>
 
@@ -27,21 +27,20 @@
     {{else}}
     <ul class="nav justify-content-right">
       <li class="nav-item">
-        <a href="/auth/login/google" class="btn btn-primary">Login</a>
+        <a href="/auth/login/google" class="btn btn-primary" id="loginBtn">Login</a>
       </li>
     </ul>
     {{/if}}
   </nav>
 
-  <div class="jumbotron jumbotron-fluid text-center">
+  <div class="jumbotron jumbotron-fluid text-center" id="welcome">
     {{#if user}}
     <h1 class="display-5">Welcome back, {{user.name}} !</h1>
     {{else}}
-    <h1 class="display-5">Welcome to Globetrotter!</h1>
+    <h1 class="display-5">Welcome to GlobeTrotter!</h1>
     {{/if}}
-    <p class="lead">This is a simple app to help you manage your trip.</p>
-    <hr class="my-3">
-    <p>Let's get started by filling the following form with your trip information.</p>
+    <h3>This is a simple app to help you manage your trip.</h3>
+    <h3>Let's get started by filling the following form with your trip information.</h3>
 
   </div>
 
@@ -113,9 +112,9 @@
 
           <div id="form-btn-group" class="float-right">
             {{#if user}}
-            <button id="save" class="btn btn-success">Save</button>
+            <button id="save" class="btn btn-primary">Save</button>
             {{/if}}
-            <button id="submit" class="btn btn-primary" style="margin-left: 8px;">Submit</button>
+            <button id="submit" class="btn btn-primary">Submit</button>
           </div>
 
         </form>
