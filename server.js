@@ -5,7 +5,7 @@ const authRouters = require("./routes/authRouters.js");
 
 const passportSetup = require("./config/passport-config.js");
 const cookieSession = require("cookie-session");
-const myKeys = require("./config/keys.js");
+const myKeys = require("./keys.js");
 const passport = require("passport");
 
 var db = require("./models");
